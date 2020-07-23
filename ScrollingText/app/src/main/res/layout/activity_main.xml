@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/article_heading"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:padding="@dimen/padding_regular"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        android:text="@string/article_heading">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/article_subheading"
+        android:layout_below="@+id/article_heading"
+        android:padding="@dimen/padding_regular"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+        android:text="@string/article_subheading">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/article_text"
+        android:id="@+id/article"
+        android:layout_below="@id/article_subheading"
+        android:lineSpacingExtra="@dimen/line_spacing"
+        android:padding="@dimen/padding_regular"
+         />
+
+</RelativeLayout>
