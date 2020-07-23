@@ -44,10 +44,12 @@
         android:onClick="launchReply"/>
 
     <EditText
-        android:id="@+id/sendButtoneditText"
+        android:id="@+id/replyButtoneditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="text"
+        android:hint="@string/reply_hint"
+        android:autofillHints="@string/reply_hint"
         app:layout_constraintBaseline_toBaselineOf="@+id/button_reply"
         app:layout_constraintEnd_toStartOf="@+id/button_reply"
         app:layout_constraintHorizontal_bias="0.0"

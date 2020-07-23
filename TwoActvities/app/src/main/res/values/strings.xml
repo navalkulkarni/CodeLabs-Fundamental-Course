@@ -3,4 +3,6 @@
     <string name="button_main_text">Send</string>
     <string name="text_header">Message Received</string>
     <string name="button_reply_text">Reply</string>
+    <string name="send_hint">Enter Message here</string>
+    <string name="reply_hint">Enter your reply here</string>
 </resources>
