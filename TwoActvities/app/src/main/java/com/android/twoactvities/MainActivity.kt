@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import androidx.core.view.isVisible
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +29,27 @@ class MainActivity : AppCompatActivity() {
         editText = findViewById(R.id.sendButtoneditText)
         replyHeader = findViewById(R.id.text_reply_header)
         replyText = findViewById(R.id.text_reply_message)
+
+        if(savedInstanceState != null)
+        {
+            Log.d(TAG,"restoring from saved state")
+            val isVisible: Boolean = savedInstanceState.getBoolean("reply_header")
+            if(isVisible)
+            {
+                replyHeader.visibility = View.VISIBLE
+                replyText.text = savedInstanceState.getString("reply_text")
+                replyText.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.d(TAG, "in SavedInstanceState")
+        if(replyHeader.visibility == View.VISIBLE ) {
+            outState.putBoolean("reply_header", true)
+            outState.putString("reply_text", replyText.text.toString())
+        }
     }
 
     override fun onStart() {
