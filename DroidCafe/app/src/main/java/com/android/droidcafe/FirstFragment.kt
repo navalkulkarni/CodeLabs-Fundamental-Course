@@ -47,6 +47,4 @@ class FirstFragment : Fragment() {
     }
 
 
-
-
 }
