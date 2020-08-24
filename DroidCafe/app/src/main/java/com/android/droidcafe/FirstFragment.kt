@@ -1,11 +1,15 @@
 package com.android.droidcafe
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_first.*
 
 
@@ -14,6 +18,12 @@ import kotlinx.android.synthetic.main.fragment_first.*
  */
 class FirstFragment : Fragment() {
 
+
+    companion object{
+        val MESSAGE = "OrderMessage"
+    }
+
+    var orderMessage:String = ""
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -27,15 +37,22 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         donut.setOnClickListener {
+            orderMessage = getString(R.string.donut_order_message)
             displayToast(getString(R.string.donut_order_message))
         }
 
         froyo.setOnClickListener {
+            orderMessage = getString(R.string.froyo_order_message)
             displayToast(getString(R.string.froyo_order_message))
         }
 
         ice_cream.setOnClickListener {
+            orderMessage = getString(R.string.ice_cream_order_message)
             displayToast(getString(R.string.ice_cream_order_message))
+        }
+
+        fab.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
     }
 
